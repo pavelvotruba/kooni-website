@@ -2,9 +2,11 @@
 // Purpose: Public Kooni Time Tracking solution page.
 // Change: Replaces the approved Landing Page V1 video placeholder with a bilingual English/Czech
 // Cloudflare Stream selector. English is the default; approved English and Czech videos are connected.
+// Change: Adds the approved bilingual animated product overview after One Configurable Flow.
 
 import Image from "next/image";
 import TimeTrackingVideo from "./TimeTrackingVideo";
+import TimeTrackingOverviewVideo from "./TimeTrackingOverviewVideo";
 
 const onboardingUrl =
   "https://app.kooni.io/auth/register-client?partnerToken=bca089f388557e776d67dedbd7edb5c8300ca911c399fa37";
@@ -12,6 +14,8 @@ const onboardingUrl =
 // Verified Cloudflare Stream video IDs for the approved English and Czech Time Tracking videos.
 const englishVideoId = "1ba39b6bd61d75cc497687a6ac8b27aa";
 const czechVideoId = "cfc2d936d71944f0ad542bfe110e1eb3";
+const englishOverviewVideoId = "9c12ed44ab97325bbac2bbf720171f25";
+const czechOverviewVideoId = "035c4bfbda91680bc063d873545f458a";
 
 const defaultDimensions = ["Department", "Location", "Job", "Phase", "Category"];
 
@@ -435,7 +439,29 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section integration-section">
+              <section className="section overview-video-section" aria-labelledby="overview-video-title">
+        <div className="overview-video-copy">
+          <p className="eyebrow">See the complete picture</p>
+          <h2 id="overview-video-title">See how Kooni Time Tracking fits together</h2>
+          <p>
+            Follow the complete Time Tracking flow — from flexible operational
+            dimensions and work assignments through configurable rules,
+            controlled approval, and the information required by downstream
+            systems.
+          </p>
+        </div>
+
+        <TimeTrackingOverviewVideo
+          englishVideoId={englishOverviewVideoId}
+          czechVideoId={czechOverviewVideoId}
+        />
+
+        <p className="overview-video-message">
+          <strong>Your work structure. Your rules and rates. Your required output.</strong>
+        </p>
+      </section>
+
+<section className="section integration-section">
           <div>
             <p className="eyebrow">Fits your technology environment</p>
             <h2>Complement the systems you already use</h2>

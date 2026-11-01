@@ -2,6 +2,7 @@
  * Purpose: Global styling for the public Kooni Time Tracking landing page.
  * Change: Retains the approved Landing Page V1 styling and changes only the Cloudflare Stream
  * video display from landscape to a centered 9:16 portrait player for desktop and mobile.
+ * Change: Adds styling for the separate bilingual 16:9 animated product overview section.
  */
 
 @import "tailwindcss";
@@ -1022,3 +1023,74 @@ a {
   }
 }
 
+/* Time Tracking animated product overview */
+.overview-video-section {
+  display: grid;
+  gap: 28px;
+}
+
+.overview-video-copy {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.overview-video-copy h2 {
+  margin-bottom: 16px;
+}
+
+.overview-video-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.overview-video-player-shell {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(199, 145, 17, 0.38);
+  border-radius: 18px;
+  background: #fffaf0;
+  box-shadow: 0 18px 44px rgba(28, 24, 18, 0.08);
+}
+
+.overview-video-player-shell .video-language-switch {
+  padding: 10px;
+  border-bottom: 1px solid rgba(199, 145, 17, 0.28);
+}
+
+.overview-video-player-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+}
+
+.overview-video-player {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #111;
+}
+
+.overview-video-message {
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .overview-video-section {
+    gap: 22px;
+  }
+
+  .overview-video-player-shell {
+    border-radius: 14px;
+  }
+
+  .overview-video-copy {
+    text-align: left;
+  }
+}
