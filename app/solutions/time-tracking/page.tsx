@@ -1,7 +1,7 @@
 // C:\kooni\kooni-website\app\solutions\time-tracking\page.tsx
 // Purpose: Public Kooni Time Tracking solution page.
-// Change: Replaces the approved Landing Page V1 video placeholder with a bilingual English/Czech
-// Cloudflare Stream selector. English is the default; approved English and Czech videos are connected.
+// Change: Updates the bilingual English/Czech Lucie presenter videos to the approved shorter versions.
+// English remains the default; no other Time Tracking page behavior is changed.
 // Change: Adds the approved bilingual animated product overview after One Configurable Flow.
 
 import Image from "next/image";
@@ -12,8 +12,8 @@ const onboardingUrl =
   "https://app.kooni.io/auth/register-client?partnerToken=bca089f388557e776d67dedbd7edb5c8300ca911c399fa37";
 
 // Verified Cloudflare Stream video IDs for the approved English and Czech Time Tracking videos.
-const englishVideoId = "1ba39b6bd61d75cc497687a6ac8b27aa";
-const czechVideoId = "cfc2d936d71944f0ad542bfe110e1eb3";
+const englishVideoId = "ef6c51ad35a2b09d6f1f9669a2335791";
+const czechVideoId = "bbb9d7e9d677e063c8c8e80318e980e2";
 const englishOverviewVideoId = "9c12ed44ab97325bbac2bbf720171f25";
 const czechOverviewVideoId = "035c4bfbda91680bc063d873545f458a";
 
