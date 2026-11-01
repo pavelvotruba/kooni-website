@@ -1,12 +1,17 @@
 // C:\kooni\kooni-website\app\solutions\time-tracking\page.tsx
 // Purpose: Public Kooni Time Tracking solution page.
-// Change: Relocates the visually approved Time Tracking Landing Page V1 under the Kooni Solutions
-// route without changing its approved customer-facing content or behavior.
+// Change: Replaces the approved Landing Page V1 video placeholder with a bilingual English/Czech
+// Cloudflare Stream selector. English is the default; approved English and Czech videos are connected.
 
 import Image from "next/image";
+import TimeTrackingVideo from "./TimeTrackingVideo";
 
 const onboardingUrl =
   "https://app.kooni.io/auth/register-client?partnerToken=bca089f388557e776d67dedbd7edb5c8300ca911c399fa37";
+
+// Verified Cloudflare Stream video IDs for the approved English and Czech Time Tracking videos.
+const englishVideoId = "1ba39b6bd61d75cc497687a6ac8b27aa";
+const czechVideoId = "cfc2d936d71944f0ad542bfe110e1eb3";
 
 const defaultDimensions = ["Department", "Location", "Job", "Phase", "Category"];
 
@@ -125,13 +130,10 @@ export default function Home() {
               information is prepared for downstream processing.
             </p>
           </div>
-          <div className="video-placeholder">
-            <div className="play-mark" aria-hidden="true">
-              ▶
-            </div>
-            <strong>Time Tracking video</strong>
-            <span>Coming soon</span>
-          </div>
+          <TimeTrackingVideo
+            englishVideoId={englishVideoId}
+            czechVideoId={czechVideoId}
+          />
         </section>
 
         <section className="section" id="flexibility">

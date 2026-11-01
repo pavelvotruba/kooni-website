@@ -1,7 +1,7 @@
 /* C:\kooni\kooni-website\app\globals.css
  * Purpose: Global styling for the public Kooni Time Tracking landing page.
- * Change: Adds responsive Kooni landing-page layout, typography, cards, workflow, controls,
- * output, CTA, header, footer, and mobile styling while retaining Tailwind integration.
+ * Change: Retains the approved Landing Page V1 styling and changes only the Cloudflare Stream
+ * video display from landscape to a centered 9:16 portrait player for desktop and mobile.
  */
 
 @import "tailwindcss";
@@ -918,3 +918,107 @@ a {
   .solution-card-copy { padding: 30px; }
   .solutions-title { font-size: 42px; }
 }
+
+/* Kooni Time Tracking bilingual video */
+.video-player-shell {
+  overflow: hidden;
+  border: 1px solid #e1d4ad;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(47, 39, 16, 0.08);
+}
+
+.video-language-switch {
+  display: flex;
+  gap: 8px;
+  padding: 14px;
+  border-bottom: 1px solid #eadfbd;
+  background: #fffaf0;
+}
+
+.video-language-button {
+  min-width: 104px;
+  padding: 10px 16px;
+  border: 1px solid #dfd7bf;
+  border-radius: 999px;
+  background: #fff;
+  color: #4d4530;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.video-language-button:hover {
+  border-color: var(--gold);
+}
+
+.video-language-button.is-active {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #fff;
+}
+
+.video-player-frame {
+  position: relative;
+  width: min(100%, 360px);
+  aspect-ratio: 9 / 16;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #111;
+}
+
+.video-player {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #111;
+}
+
+.video-player-pending {
+  display: flex;
+  min-height: 330px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    radial-gradient(circle, #d7b65a, transparent 65%);
+  color: #4b4431;
+  text-align: center;
+}
+
+.video-player-pending .play-mark {
+  margin-bottom: 18px;
+}
+
+.video-player-pending strong {
+  font-size: 20px;
+}
+
+.video-player-pending span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 680px) {
+  .video-language-switch {
+    justify-content: center;
+  }
+
+  .video-language-button {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .video-player-pending {
+    min-height: 240px;
+  }
+}
+
