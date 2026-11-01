@@ -1,6 +1,6 @@
 // C:\kooni\kooni-website\app\layout.tsx
-// Purpose: Root layout and metadata for the public Kooni Time Tracking website.
-// Change: Retains the existing Geist/root-layout structure and replaces generic starter metadata.
+// Purpose: Root layout and metadata for the public Kooni website.
+// Change: Retains the existing Geist/root-layout structure and uses website-level Kooni metadata.
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kooni Time Tracking | Your work structure, not ours.",
+  title: "Kooni | Your business. Your processes. Your Kooni.",
   description:
-    "Flexible employee time tracking, operational dimensions, configurable rules and rates, controlled approval, and flexible downstream outputs.",
+    "Explore configurable Kooni business solutions designed around the way your organization works.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
