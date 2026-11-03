@@ -35,8 +35,17 @@ export default function SolutionsPage() {
 
           <div className="solutions-grid">
             <article className="solution-card">
-              <div className="solution-card-logo">
-                <Image src="/kooni-logo.png" alt="Kooni" width={150} height={150} />
+              <div
+                className="solution-card-logo"
+                style={{ position: "relative", padding: 0, overflow: "hidden", minHeight: 320 }}
+              >
+                <Image
+                  src="/time-tracking-solution-card-261103-1.png"
+                  alt="Time Tracking dashboard with employee punch-in and punch-out clock"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 35vw"
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                />
               </div>
               <div className="solution-card-copy">
                 <p className="eyebrow">Kooni Time Tracking</p>
