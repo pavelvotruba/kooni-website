@@ -106,12 +106,16 @@ export default function Home() {
           </div>
 
           <div className="hero-panel" aria-label="Kooni Time Tracking overview">
-            <div className="hero-logo-wrap">
+            <div
+              className="hero-logo-wrap"
+              style={{ position: "relative", width: "100%", aspectRatio: "3 / 2", padding: 0, overflow: "hidden" }}
+            >
               <Image
-                src="/kooni-logo.png"
-                alt="Kooni logo"
-                width={360}
-                height={360}
+                src="/time-tracking-hero-261103-1.png"
+                alt="Time tracking dashboard with employee activity, approval workflow, calendar and reporting"
+                fill
+                sizes="(max-width: 900px) 100vw, 480px"
+                style={{ objectFit: "cover", maxWidth: "none" }}
                 className="hero-logo"
               />
             </div>
