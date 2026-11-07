@@ -1,16 +1,17 @@
 // C:\kooni\kooni-website\app\solutions\time-tracking\TimeTrackingVideo.tsx
-// Purpose: Bilingual Cloudflare Stream player for the public Kooni Time Tracking solution page.
-// Change: Uses verified Cloudflare Stream video IDs; English is default and Czech V1 is connected.
+// Purpose: English, Czech, and Spanish Cloudflare Stream player for the public Kooni Time Tracking solution page.
+// Change: Adds Spanish video selection; English remains the default and Czech remains available.
 
 "use client";
 
 import { useState } from "react";
 
-type VideoLanguage = "en" | "cs";
+type VideoLanguage = "en" | "cs" | "es";
 
 type TimeTrackingVideoProps = {
   englishVideoId: string;
   czechVideoId: string;
+  spanishVideoId: string;
 };
 
 const cloudflareStreamCustomerCode = "customer-nvac03smcgg0ti2n";
@@ -18,12 +19,13 @@ const cloudflareStreamCustomerCode = "customer-nvac03smcgg0ti2n";
 export default function TimeTrackingVideo({
   englishVideoId,
   czechVideoId,
+  spanishVideoId,
 }: TimeTrackingVideoProps) {
   const [language, setLanguage] = useState<VideoLanguage>("en");
 
   const activeVideoId =
-    language === "en" ? englishVideoId : czechVideoId;
-  const activeLanguageLabel = language === "en" ? "English" : "Čeština";
+    language === "en" ? englishVideoId : language === "cs" ? czechVideoId : spanishVideoId;
+  const activeLanguageLabel = language === "en" ? "English" : language === "cs" ? "Čeština" : "Español";
 
   const activeVideoUrl = activeVideoId
     ? `https://${cloudflareStreamCustomerCode}.cloudflarestream.com/${activeVideoId}/iframe`
@@ -47,6 +49,14 @@ export default function TimeTrackingVideo({
           aria-pressed={language === "cs"}
         >
           Čeština
+        </button>
+        <button
+          type="button"
+          className={`video-language-button${language === "es" ? " is-active" : ""}`}
+          onClick={() => setLanguage("es")}
+          aria-pressed={language === "es"}
+        >
+          Español
         </button>
       </div>
 
