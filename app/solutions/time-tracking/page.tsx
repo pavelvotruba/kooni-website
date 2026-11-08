@@ -13,7 +13,7 @@ const onboardingUrl =
 
 // Cloudflare Stream video IDs for the approved English, Czech, and Spanish Time Tracking videos.
 const englishVideoId = "ef6c51ad35a2b09d6f1f9669a2335791";
-const czechVideoId = "bbb9d7e9d677e063c8c8e80318e980e2";
+const czechVideoId = "8755db5ad99e5a30b423fcbb3853000b";
 const spanishVideoId = "fe0d96d67782732299e54322ee601dab";
 const englishOverviewVideoId = "9c12ed44ab97325bbac2bbf720171f25";
 const czechOverviewVideoId = "035c4bfbda91680bc063d873545f458a";
