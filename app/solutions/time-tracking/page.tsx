@@ -12,7 +12,7 @@ const onboardingUrl =
   "https://app.kooni.io/auth/register-client?partnerToken=bca089f388557e776d67dedbd7edb5c8300ca911c399fa37";
 
 // Cloudflare Stream video IDs for the approved English, Czech, and Spanish Time Tracking videos.
-const englishVideoId = "ef6c51ad35a2b09d6f1f9669a2335791";
+const englishVideoId = "25adcdfb7b85d97433689fe53cc08a7f";
 const czechVideoId = "8755db5ad99e5a30b423fcbb3853000b";
 const spanishVideoId = "fe0d96d67782732299e54322ee601dab";
 const englishOverviewVideoId = "9c12ed44ab97325bbac2bbf720171f25";
